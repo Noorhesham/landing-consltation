@@ -23,7 +23,7 @@ export default function Home() {
       <DigitalAmbition />
       <FeaturesSectionDemo />
       <Testimonials />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <OurCompany />
       <ContactSection />
     </section>

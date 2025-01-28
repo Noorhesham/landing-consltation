@@ -5,21 +5,6 @@ export const Template = "template_3i15jgb";
 export const PUBLI_KEY = ""; //ضيف ال key  account settings in email js webiste !
 export const LOGOPATH = "/Hollow-Knight-Background-PNG-Image.png";
 export const LOGOTEXT = "NOOR";
-// الشركات مثلا او التيكنولوجيز
-export const TECH = [
-  "/ts.svg",
-  "/node.png",
-  "/idhHZwYUWa.png",
-  "/next.png",
-  "/react.svg",
-  "/tail.svg",
-  "/three.svg",
-  "/fm.svg",
-  "/query.png",
-  "/sass.webp",
-  "/js.png",
-];
-export const MAINCOLOR = "#ff3d00";
 
 // الخدماااااااااااات
 export const SERVICES = [
@@ -235,10 +220,3 @@ export const animationProjcets2 = [
     img: ["/palestine1.png", "/palestine2.png", "/palestine3.png"],
   },
 ];
-export default {
-  projects,
-  projects2,
-  SERVICES,
-  TECH,
-  animationProjcets2,
-};

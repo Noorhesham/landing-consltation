@@ -37,7 +37,7 @@ export async function FeaturesSectionDemo() {
   const t = await getTranslations();
   return (
     <MaxWidthWrapper className="">
-      <h2 className=" my-3 text-center text-4xl font-semibold">Out Sourcing</h2>
+      <h2 className=" my-3 text-center text-4xl font-semibold">{t('src')}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-2 max-w-7xl mx-auto">
         {grid.map((feature, i) => (
           <div

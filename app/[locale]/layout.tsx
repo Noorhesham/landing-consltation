@@ -40,9 +40,9 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider messages={messages} locale={locale}>
         <body
-          className={` ${locale === "ar" ? "rtl text-right arabic" : "ltr"} ${
+          className={` ${locale === "ar" ? "rtl rtl:flex-row-reverse !text-right arabic" : "ltr"} ${
             locale === "ar" ? cairo.className : cinzel.className
-          } antialiased`}
+          } light antialiased`}
         >
           <div className=" bg-rose-50/30 relative">
             <FloatingNav

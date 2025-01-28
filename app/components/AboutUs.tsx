@@ -16,18 +16,13 @@ const AboutUs = async () => {
           <GridContainer className=" gap-4" motion={true} cols={2}>
             {Array.from({ length: 4 }).map((_, i) => (
               <MotionItem key={i} className=" first:-mt-5 rounded-2xl overflow-hidden w-full h-44 relative">
-                <Image
-                  src={`ai${i+1}.jpg`}
-                  alt=""
-                  fill
-                  className=" object-cover"
-                />
+                <Image src={`ai${i + 1}.jpg`} alt="" fill className=" object-cover" />
               </MotionItem>
             ))}
           </GridContainer>{" "}
           <ColText
             linePositions="left"
-            about={"💵Differentiation"}
+            about={t("Differentiation")}
             title={t("differentiation.title")}
             paragraph={t("differentiation.description")}
             buttonText="Grow your wealth with us"

@@ -17,7 +17,7 @@ export const childVariants = {
 };
 const StaggerList = ({ list, text, children }: { list: string[]; text: string; children?: React.ReactNode }) => {
   return (
-    <div className="flex text-left flex-col gap-2">
+    <div className="flex rtl:text-right ltr:text-left rtl:items-start flex-col gap-2">
       <motion.h2
         initial={{ opacity: 0, y: -10 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}

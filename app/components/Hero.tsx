@@ -14,14 +14,14 @@ import Slider from "./Overlapslider";
 const HeroSection: React.FC = async () => {
   const t = await getTranslations();
   return (
-    <section className="">
+    <section className=" pt-20">
       {" "}
       <MaxWidthWrapper className="  flex justify-center items-center  h-screen ">
-        <div className=" flex  justify-between w-full items-start relative">
+        <div className=" flex  lg:flex-row flex-col justify-between w-full items-start relative">
           <div className="flex flex-col gap-3">
             <ColText
-              about={"💵investment wisdom for a brighter future"}
-              className=" relative max-w-2xl"
+              about={t("invest")}
+              className=" relative  max-w-2xl"
               buttonText="Investment Options"
               paragraph={t("about")}
               title={t("company")}

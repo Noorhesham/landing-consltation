@@ -222,6 +222,40 @@
       "designation": "Ezz El Arab"
     }
   },
+  "contactForm": {
+    "name": "Your name",
+    "email": "Your email",
+    "phone": "Your phone number",
+    "companyName": "Your company name (optional)",
+    "jobTitle": "Your job title (optional)",
+    "message": "Your message",
+    "sending": "Sending...",
+    "send": "SEND OUT",
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "There was an error sending your message. Please try again."
+  },
+  "Send You Proposal To Us":"Send You Proposal To Us",
+  "src": "Out Sourcing",
+  "parteners":"Our Partners",
+  "Differentiation": "Differentiation",
+  "successfulInvestor": "Our Successful Investor",
+  "investmentTeam": "Our team of experienced investment management experts here to guide",
+  "invest": "💵Investment Wisdom For A Brighter Future",
+  "yourName": "Your name",
+  "yourEmail": "Your email",
+  "yourPhoneNumber": "Your phone number",
+  "yourCompanyName": "Your company name (optional)",
+  "yourJobTitle": "Your job title (optional)",
+  "yourMessage": "Your message",
+  "sendOut": "SEND OUT",
+  "sending": "Sending...",
+  "messageSent": "Your message has been sent successfully!",
+  "messageError": "There was an error sending your message. Please try again.",
+  "services2": {
+    "digitalTransformation": "Digital Transformation Advisory",
+    "pmo": "Project Management Office (PMO)",
+    "techOutsourcing": "Technology Outsourcing Services"
+  },
   "caseStudies": {
     "title": "Our Recent Case Studies",
     "flag": "Case Studies",

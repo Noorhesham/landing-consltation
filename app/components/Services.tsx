@@ -111,7 +111,7 @@ const Services = () => {
               <div className="duration-300 overflow-hidden rounded-xl w-full h-96 relative">
                 <Image src={tabs[currentTab].content.img} alt="hero" fill className="duration-300 object-cover" />
               </div>
-              <div className="flex flex-col items-start">
+              <div className="flex flex-col  rtl:items-start">
                 <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
                 <TypographyP>{tabs[currentTab].content.para}</TypographyP>
                 <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />

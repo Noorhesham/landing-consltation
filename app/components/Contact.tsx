@@ -1,10 +1,13 @@
+"use client";
 import { Mail, Phone } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import TitleLine from "./TitleLine";
 import Flag from "./Flag";
 import ContactForm from "./ContactForm";
+import { useTranslations } from "next-intl";
 
 const ContactSection: FC = () => {
+  const t = useTranslations();
   return (
     <section
       style={{
@@ -19,9 +22,9 @@ const ContactSection: FC = () => {
         <div className="flex gap-4 flex-col">
           <div className="flex flex-col  items-start">
             <Flag className="!w-fit" text="Contact Us" />
-            <TitleLine title="  Send you Proposal to Us" />
+            <TitleLine title={t("Send You Proposal To Us")} />
           </div>
-          <ContactForm/>
+          <ContactForm />
         </div>
 
         <div className="">

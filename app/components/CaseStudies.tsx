@@ -22,12 +22,7 @@ const CaseStudies = async () => {
               <TypographyH4 className="font-semibold !text-base">{t(`caseStudies.step${i + 1}`)}</TypographyH4>
               <TypographyP className="!text-sm">{t(`caseStudies.description${i + 1}`)}</TypographyP>
             </div>
-            <Image
-              src={"/consulting-services-process-analysis-693x426.jpg.webp"}
-              alt=""
-              fill
-              className="object-cover"
-            />
+            <Image src={i !== 2 ? `/p${i + 1}.webp` : `/p3.jpg`} alt="" fill className="object-cover" />
           </div>
         ))}
       />
