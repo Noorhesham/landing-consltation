@@ -26,13 +26,17 @@ const StaggerList = ({ list, text, children }: { list: string[]; text: string; c
         {" "}
         {text.split("<b>")[0]}
         <b className=" font-bold text-2xl"> {text.split("<b>")[1]}</b>
-        <span className=" absolute -bottom-2 right-0 w-24 h-[1px] bg-orange-500"></span>
+        <span className=" absolute -bottom-2 left-10 w-24 h-[1px] bg-orange-500"></span>
       </motion.h2>
       {children}
       <motion.ul variants={containerVariants} initial="initial" whileInView="animate" className="  flex-col gap-2 flex">
         {list.map(({ title, para }, i) => (
-          <motion.li variants={childVariants} key={i} className=" flex items-center py-2 border-input border-b">
-           <CheckCheck className=" mr-2 text-primary w-4 h-4"/> <b className="font-bold">{title}</b>: {para}
+          <motion.li variants={childVariants} key={i} className=" flex flex-col items-start py-2 border-input border-b">
+            <b className="font-semibold text-base flex items-start gap-1">
+              <CheckCheck className="  text-primary w-4 h-4" />
+              {title}
+            </b>
+            {para}
           </motion.li>
         ))}
       </motion.ul>

@@ -2,6 +2,7 @@ import { Mail, Phone } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import TitleLine from "./TitleLine";
 import Flag from "./Flag";
+import ContactForm from "./ContactForm";
 
 const ContactSection: FC = () => {
   return (
@@ -20,35 +21,7 @@ const ContactSection: FC = () => {
             <Flag className="!w-fit" text="Contact Us" />
             <TitleLine title="  Send you Proposal to Us" />
           </div>
-          <form className="mt-8 grid grid-cols-1 gap-2">
-            <input
-              type="text"
-              placeholder="Full Name*"
-              className="w-full  p-2 rounded-lg bg-gray-800 text-white border border-gray-600"
-            />
-            <input
-              type="email"
-              placeholder="Email*"
-              className="w-full  p-2 rounded-lg bg-gray-800 text-white border border-gray-600"
-            />
-            <input
-              type="tel"
-              placeholder="Phone*"
-              className="w-full  p-2 rounded-lg bg-gray-800 text-white border border-gray-600"
-            />
-            <input
-              type="text"
-              placeholder="Subject*"
-              className="w-full  p-2 rounded-lg bg-gray-800 text-white border border-gray-600"
-            />
-            <textarea
-              placeholder="Message*"
-              className="w-full  p-2 rounded-lg bg-gray-800 text-white border border-gray-600 h-32"
-            ></textarea>
-            <button type="submit" className="bg-red-500 text-white py-4 px-6 rounded-lg font-bold hover:bg-red-600">
-              Send Request Now
-            </button>
-          </form>
+          <ContactForm/>
         </div>
 
         <div className="">

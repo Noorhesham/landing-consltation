@@ -29,8 +29,8 @@ const ColText = ({
   return (
     <div className={`flex flex-col gap-4 ${className}`}>
       {about && <Flag text={about} />}
-      <TitleLine title={title} line={line} linePositions={linePositions} />
-      <TypographyP className={`${line && "mt-8"}`}>{paragraph}</TypographyP>
+      <TitleLine className=" lg:text-5xl" title={title} line={line} linePositions={linePositions} />
+      <TypographyP className={` lg:text-base ${line && "mt-8"}`}>{paragraph}</TypographyP>
       <div className="flex items-center gap-3">
         <Button size={"lg"} className="flex  items-center gap-2 !rounded-full">
           {buttonText} {iconBtn}

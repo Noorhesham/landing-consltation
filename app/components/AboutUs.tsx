@@ -4,8 +4,10 @@ import GridContainer from "./GridContainer";
 import Image from "next/image";
 import MotionItem from "./MotionItem";
 import ColText from "./ColText";
+import { getTranslations } from "next-intl/server";
 
-const AboutUs = () => {
+const AboutUs = async () => {
+  const t = await getTranslations();
   return (
     <section className=" bg-white">
       {" "}
@@ -15,7 +17,7 @@ const AboutUs = () => {
             {Array.from({ length: 4 }).map((_, i) => (
               <MotionItem key={i} className=" first:-mt-5 rounded-2xl overflow-hidden w-full h-44 relative">
                 <Image
-                  src={"/consulting-services-approach-expertise-693x426.jpg.webp"}
+                  src={`ai${i+1}.jpg`}
                   alt=""
                   fill
                   className=" object-cover"
@@ -25,9 +27,9 @@ const AboutUs = () => {
           </GridContainer>{" "}
           <ColText
             linePositions="left"
-            about={"💵investment wisdom for a brighter future"}
-            title="Unlock for the power of smart invstments now"
-            paragraph="Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maiores molestias magnam minima consequuntur quae ab error ex? Officiis ullam aperiam facilis reprehenderit provident veniam enim temporibus culpa, debitis nisi!"
+            about={"💵Differentiation"}
+            title={t("differentiation.title")}
+            paragraph={t("differentiation.description")}
             buttonText="Grow your wealth with us"
           />
         </GridContainer>

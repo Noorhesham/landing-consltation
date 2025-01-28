@@ -8,104 +8,89 @@ import GridContainer from "./GridContainer";
 import StaggerList from "./StaggerList";
 import { AnimatePresence } from "framer-motion";
 import MotionItem from "./MotionItem";
-const tabs = [
-  {
-    tab: { img: "/5956592.png", title: "lorem ipsum", para: "lorem ipsum" },
-    content: {
-      img: "/Consulting-services-526x589.png.webp",
-      para: "personalized financial advice to help you navigate the complex world of investments",
-      title: "financial advisory services",
-      list: [
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-      ],
-      listitle: "text",
-    },
-  },
-  {
-    tab: { img: "/2098402.png", title: "lorem ipsum", para: "lorem ipsum" },
-    content: {
-      img: "/consulting-services-approach-expertise-693x426.jpg.webp",
-      para: "personalized financial advice to help you navigate the complex world of investments",
-      title: "financial advisory services",
-      list: [
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-      ],
-      listitle: "text",
-    },
-  },
-  {
-    tab: { img: "/2098402.png", title: "lorem ipsum", para: "lorem ipsum" },
-    content: {
-      img: "/consulting-services-approach-expertise-693x426.jpg.webp",
-      para: "personalized financial advice to help you navigate the complex world of investments",
-      title: "financial advisory services",
-      list: [
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-      ],
-      listitle: "text",
-    },
-  },
-  {
-    tab: { img: "/2098402.png", title: "lorem ipsum", para: "lorem ipsum" },
-    content: {
-      img: "/consulting-services-approach-expertise-693x426.jpg.webp",
-      para: "personalized financial advice to help you navigate the complex world of investments",
-      title: "financial advisory services",
-      list: [
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-      ],
-      listitle: "text",
-    },
-  },
-  {
-    tab: { img: "/2098402.png", title: "lorem ipsum", para: "lorem ipsum" },
-    content: {
-      img: "/consulting-services-approach-expertise-693x426.jpg.webp",
-      para: "personalized financial advice to help you navigate the complex world of investments",
-      title: "financial advisory services",
-      list: [
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-        { title: "lorem ipsum", para: "lorem ipsum" },
-      ],
-      listitle: "text",
-    },
-  },
-];
+import { useTranslations } from "next-intl";
+import ModalCustom from "./ModalCustom";
+import ContactSection from "./Contact";
+import { Button } from "@/components/ui/button";
+import ContactForm from "./ContactForm";
+
 const Services = () => {
+  const t = useTranslations("services");
   const [currentTab, setCurrentTab] = React.useState(0);
+
+  const tabs = [
+    {
+      tab: {
+        img: "/digital.jpg",
+        title: t("digitalTransformation.title"),
+        para: t("digitalTransformation.businessProcess"),
+      },
+      content: {
+        img: "/digital.jpg",
+        title: t("digitalTransformation.title"),
+        para: t("digitalTransformation.businessProcess"),
+        list: [
+          { title: t("digitalTransformation.pmoEstablishment"), para: "" },
+          { title: t("digitalTransformation.solutionsAutomation"), para: "" },
+          { title: t("digitalTransformation.dataDecision"), para: "" },
+        ],
+        listitle: t("digitalTransformation.title"),
+      },
+    },
+    {
+      tab: {
+        img: "/pmo.png",
+        title: t("pmo.title"),
+        para: t("pmo.endToEnd"),
+      },
+      content: {
+        img: "/pmo.png",
+        title: t("pmo.title"),
+        para: t("pmo.endToEnd"),
+        list: [
+          { title: t("pmo.projectCharter.title"), para: t("pmo.projectCharter.description") },
+          { title: t("pmo.planning.title"), para: t("pmo.planning.description") },
+          { title: t("pmo.stakeholders.title"), para: t("pmo.stakeholders.description") },
+        ],
+        listitle: t("pmo.title"),
+      },
+    },
+    {
+      tab: {
+        img: "/out.webp",
+        title: t("techOutsourcing.title"),
+        para: t("techOutsourcing.specializedTeams"),
+      },
+      content: {
+        img: "/out.webp",
+        title: t("techOutsourcing.title"),
+        para: t("techOutsourcing.specializedTeams"),
+        list: [
+          { title: t("techOutsourcing.scalableModels"), para: "" },
+          { title: t("techOutsourcing.qualityAssurance"), para: "" },
+        ],
+        listitle: t("techOutsourcing.title"),
+      },
+    },
+  ];
+
   return (
     <section className="flex items-center flex-col">
       <Slider
         spaceBetween={10}
-        slidesPerView={4}
-        title="our best professional investment services"
-        flag="💵investment wisdom "
+        slidesPerView={3}
+        title={t("title")}
+        flag="Services"
         items={tabs.map(({ tab: { img, title, para } }, i) => (
           <div
+            key={i}
             onClick={() => setCurrentTab(i)}
-            className={`"flex rounded-2xl ${
-              i === currentTab ? "bg-primary" : " bg-white"
-            } flex-col cursor-pointer hover:opacity-80  duration-300 items-center py-5 px-10"`}
+            className={`flex rounded-2xl ${
+              i === currentTab ? "bg-primary" : "bg-white"
+            } flex-col cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
           >
-            <div className={`   w-full block  h-20 relative `}>
-              <Image src={img} alt="" fill className=" object-contain" />
-            </div>
             <TypographyH2
-              className={` ${
+              className={`${
                 i === currentTab && "!text-white"
               } text-center border-none lg:text-lg text-sm mt-2 text-muted-foreground`}
             >
@@ -115,24 +100,22 @@ const Services = () => {
         ))}
       />
       <AnimatePresence>
-        <MotionItem className=" bg-primary-foreground/50 w-full" key={currentTab}>
-          <MaxWidthWrapper>
+        <MotionItem
+          exit={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className="bg-primary-foreground/50 w-full"
+          key={currentTab}
+        >
+          <MaxWidthWrapper noPadding>
             <GridContainer cols={2}>
-              <div className="duration-300 w-full h-96 relative">
-                <Image
-                  src={tabs[currentTab].content.img ?? tabs[0].content.img}
-                  alt="hero"
-                  fill
-                  className="duration-300 object-cover"
-                />
+              <div className="duration-300 overflow-hidden rounded-xl w-full h-96 relative">
+                <Image src={tabs[currentTab].content.img} alt="hero" fill className="duration-300 object-cover" />
               </div>
               <div className="flex flex-col items-start">
-                <TypographyH2>{tabs[currentTab].content.title ?? tabs[0].content.title}</TypographyH2>
-                <TypographyP> </TypographyP>
-                <StaggerList
-                  list={tabs[currentTab].content.list ?? tabs[0].content.list}
-                  text={tabs[currentTab].content.listitle ?? tabs[0].content.listitle}
-                />
+                <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
+                <TypographyP>{tabs[currentTab].content.para}</TypographyP>
+                <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
+                <ModalCustom content={<ContactForm />} btn={<Button className=" my-4">Apply</Button>} />
               </div>
             </GridContainer>
           </MaxWidthWrapper>

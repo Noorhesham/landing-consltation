@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Cairo, Ubuntu } from "next/font/google";
+import { Cairo, Montserrat } from "next/font/google";
 import "../globals.css";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
-import Language from "../components/Language";
 import { NextIntlClientProvider } from "next-intl";
 import { FloatingNav } from "../components/NavBar";
-import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import Footer from "../components/Footer";
 
 const cairo = Cairo({
@@ -13,7 +11,7 @@ const cairo = Cairo({
   weight: ["200", "300", "400", "600", "700"],
 });
 
-const cinzel = Ubuntu({
+const cinzel = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
 });
@@ -42,7 +40,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <NextIntlClientProvider messages={messages} locale={locale}>
         <body
-          className={` ${locale === "ar" ? "rtl" : "ltr"} ${
+          className={` ${locale === "ar" ? "rtl text-right arabic" : "ltr"} ${
             locale === "ar" ? cairo.className : cinzel.className
           } antialiased`}
         >
