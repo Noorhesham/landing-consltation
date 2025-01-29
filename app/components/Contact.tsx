@@ -33,14 +33,14 @@ const ContactSection: FC = () => {
             <h3 className="text-2xl font-semibold">{t("contactUs")}</h3>
             <p className="mt-2">8708 Technology Forest Pl Suite 125 -G, The Woodlands, TX 77381</p>
           </div>
-          <div className="flex items-center gap-4">
+          <a href="tel:+20 102 418 9899" className="flex items-center gap-4">
             <Phone className="w-6 h-6" />
-            <p className="text-lg">123-456-7890</p>
-          </div>
-          <div className="flex items-center gap-4">
+            <p className="text-lg">+20 102 418 9899</p>
+          </a>
+          <a href="mailto:Info@qbseg.com" className="flex items-center gap-4">
             <Mail className="w-6 h-6" />
-            <p className="text-lg">info@taxvice.com</p>
-          </div>
+            <p className="text-lg">Info@qbseg.com</p>
+          </a>
         </div>
       </MaxWidthWrapper>
     </section>

@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import TitleLine from "./TitleLine";
 import Link from "next/link";
+import { Mail, Phone } from "lucide-react";
 
 export default async function Footer() {
   const t = await getTranslations();
@@ -50,29 +51,19 @@ export default async function Footer() {
             <h4 className="font-semibold text-gray-800">Learn</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
               <li>
-                <a href="#" className="hover:text-blue-500">
-                  Product
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-500">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-blue-500">
+                <a href="/about-us" className="hover:text-blue-500">
                   Schedule a demo
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-blue-500">
+                <a href="/contact-us" className="hover:text-blue-500">
                   Our Blog
                 </a>
               </li>
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold text-gray-800">Our Company</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
               <li>
@@ -96,23 +87,19 @@ export default async function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="font-semibold text-gray-800">Get in touch</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
-              <li>
-                <span className="block font-semibold">USA:</span> +91 02 2585 0556
-              </li>
-              <li>
-                <span className="block font-semibold">UK:</span> +61 02 2585 0556
-              </li>
-              <li>
-                <span className="block font-semibold">Email:</span> Contacthelp@Demoui.co
-              </li>
-              <li>
-                <span className="block font-semibold">Info:</span> Info@constia.co
-              </li>
+              <a href="tel:+20 102 418 9899" className="flex items-center gap-4">
+                <Phone className="w-6 h-6" />
+                <p className="text-lg">+20 102 418 9899</p>
+              </a>
+              <a href="mailto:Info@qbseg.com" className="flex items-center gap-4">
+                <Mail className="w-6 h-6" />
+                <p className="text-lg">Info@qbseg.com</p>
+              </a>
             </ul>
           </div>
         </div>
