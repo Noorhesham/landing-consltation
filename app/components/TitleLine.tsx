@@ -17,7 +17,7 @@ const TitleLine = ({
     <TypographyH2
       className={` ${line && "border-none"} capitalize ${
         className || ""
-      } flex relative font-extrabold text-5xl max-w-2xl flex-col gap-2`}
+      } flex relative font-extrabold text-3xl lg:text-5xl max-w-2xl flex-col gap-2`}
     >
       {title.split("<br>").map((t, i) => (
         <span key={i}>{t}</span>

@@ -112,7 +112,7 @@ const Methodology = () => {
             onClick={() => setCurrentTab(i)}
             className={`flex rounded-2xl ${
               i === currentTab ? "bg-primary" : "bg-white"
-            } flex-col cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
+            } flex-col bg-gray-100 cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
           >
             <div className="w-full block h-20 relative">
               <Image src={img} alt="" fill className="object-contain" />
