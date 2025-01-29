@@ -6,7 +6,6 @@ import "swiper/css";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { memo, ReactNode, useState } from "react";
 import Image from "next/image";
-import { TypographyH2 } from "./Typography";
 import { Autoplay } from "swiper/modules"; // Correct import for Autoplay
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -17,7 +16,7 @@ const Container = memo(({ children, maxwidth }: { children: ReactNode; maxwidth?
   return maxwidth ? (
     <MaxWidthWrapper className="  relative overflow-hidden">{children}</MaxWidthWrapper>
   ) : (
-    <div className=" max-w-[100vw]  relative overflow-hidden">{children}</div>
+    <div className=" max-w-5xl lg:max-w-[100vw]  relative overflow-hidden">{children}</div>
   );
 });
 
@@ -47,10 +46,10 @@ export const Slider = ({
   return (
     <section id="projects">
       <Container maxwidth={maxwidth} >
-        <div className="flex  relative flex-col gap-4">
+        <div className="flex  relative items-center flex-col gap-4">
           {title && (
             <MaxWidthWrapper noPadding className="flex items-center flex-col gap-4 mx-auto">
-              {flag && <Flag className="!w-fit" text={flag} />}
+              {flag && <Flag className="!w-fit !mx-auto" text={flag} />}
               {title && <TitleLine className="text-center" title={title} />}
             </MaxWidthWrapper>
           )}

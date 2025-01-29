@@ -3,7 +3,7 @@ import { Cairo, Montserrat } from "next/font/google";
 import "../globals.css";
 import { getMessages, unstable_setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import { FloatingNav } from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 
 const cairo = Cairo({
@@ -45,13 +45,7 @@ export default async function RootLayout({
           } light antialiased`}
         >
           <div className=" bg-rose-50/30 relative">
-            <FloatingNav
-              navItems={[
-                { name: "Home", link: "/" },
-                { name: "About", link: "/about" },
-                { name: "contact", link: "/contact" },
-              ]}
-            />
+            <NavBar />
             {children}
           </div>
           <Footer />

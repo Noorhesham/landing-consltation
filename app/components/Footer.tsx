@@ -1,66 +1,71 @@
+import { getTranslations } from "next-intl/server";
+import Logo from "./Logo";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import TitleLine from "./TitleLine";
+import Link from "next/link";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations();
   return (
     <footer className="bg-gray-50 ">
       <MaxWidthWrapper>
         <div className="text-center flex items-center justify-between  mb-12">
-          <TitleLine className=" text-5xl text-left" title="Join Us today and let us help you to grow your business" />
+          <TitleLine
+            line={false}
+            className=" text-5xl text-left"
+            title="Join Us today and let us help you to grow your business"
+          />
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <input
               type="email"
               placeholder="Email Address"
               className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
             />
-            <button className="px-6 py-2 bg-red-500 text-white font-semibold rounded-r-md hover:bg-red-600">
+            <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-r-md hover:bg-blue-600">
               Subscribe
             </button>
-          </div>
+          </div> */}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-red-500">CONSULTIA</h3>
-            <p className="mt-2 text-gray-600">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis
-              enim velit mollit.
-            </p>
+            <Logo />
+            <p className="mt-2 text-gray-600">{t("about")}</p>
             <div className="flex gap-4 mt-4">
-              <a href="#" className="text-red-500 hover:text-red-600">
+              <a href="#" className="text-blue-500 hover:text-blue-600">
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="text-red-500 hover:text-red-600">
+              <a href="#" className="text-blue-500 hover:text-blue-600">
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-red-500 hover:text-red-600">
+              <a href="#" className="text-blue-500 hover:text-blue-600">
                 <i className="fab fa-facebook"></i>
               </a>
             </div>
-            <p className="mt-4 text-gray-400">©2023 Design by Fleexstudio</p>
+            <p className="mt-4 text-gray-400">©2025 </p>
           </div>
 
           <div>
             <h4 className="font-semibold text-gray-800">Learn</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Product
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Schedule a demo
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Our Blog
                 </a>
               </li>
@@ -71,22 +76,22 @@ export default function Footer() {
             <h4 className="font-semibold text-gray-800">Our Company</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   About us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   User Terms
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-red-500">
+                <a href="#" className="hover:text-blue-500">
                   Help Centre
                 </a>
               </li>

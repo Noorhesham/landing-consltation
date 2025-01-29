@@ -80,7 +80,7 @@ const Services = () => {
         spaceBetween={10}
         slidesPerView={3}
         title={t("title")}
-        flag="Services"
+        flag={t("title")}
         items={tabs.map(({ tab: { img, title, para } }, i) => (
           <div
             key={i}
@@ -115,7 +115,11 @@ const Services = () => {
                 <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
                 <TypographyP>{tabs[currentTab].content.para}</TypographyP>
                 <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
-                <ModalCustom content={<ContactForm />} btn={<Button className=" my-4">Apply</Button>} />
+                <ModalCustom
+                  title={tabs[currentTab].content.title}
+                  content={<ContactForm services={tabs[currentTab].content.title} />}
+                  btn={<Button className=" my-4">{t("Apply")}</Button>}
+                />
               </div>
             </GridContainer>
           </MaxWidthWrapper>

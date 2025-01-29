@@ -17,7 +17,7 @@ import { useLocale, useTranslations } from "next-intl";
 
 const servicesArray = [
   { en: "Digital Transformation", ar: "التحول الرقمي" },
-  { en: "PMO Services", ar: "خدمات إدارة المشاريع" },
+  { en: "PMO Services", ar:"مكتب إدارة المشاريع (PMO)" },
   { en: "Tech Outsourcing", ar: "الاستعانة بالتكنولوجيا الخارجية" },
 ];
 
@@ -31,9 +31,12 @@ const messageSchema = z.object({
   services: z.array(z.string()).optional(),
 });
 
-const ContactForm = ({ services }: { services: string[] }) => {
+const ContactForm = ({ services }: { services: string }) => {
   const form = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),
+    defaultValues: {
+      services: services ? [services] : [],
+    },
   });
 
   const [success, setSuccess] = useState(false);

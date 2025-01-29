@@ -105,7 +105,7 @@ const Methodology = () => {
         spaceBetween={10}
         slidesPerView={4}
         title={t("title")}
-        flag="📊 Methodology"
+        flag={t("Methodology")}
         items={tabs.map(({ tab: { img, title, para } }, i) => (
           <div
             key={i}

@@ -10,19 +10,21 @@ import { FcMoneyTransfer } from "react-icons/fc";
 import Line3 from "./Line3";
 import { getTranslations } from "next-intl/server";
 import Slider from "./Overlapslider";
+import Link from "next/link";
 
 const HeroSection: React.FC = async () => {
   const t = await getTranslations();
   return (
-    <section className=" pt-20">
+    <section className=" pt-32 lg:pt-20">
       {" "}
-      <MaxWidthWrapper className="  flex justify-center items-center  h-screen ">
-        <div className=" flex  lg:flex-row flex-col justify-between w-full items-start relative">
-          <div className="flex flex-col gap-3">
+      <MaxWidthWrapper className="  flex justify-center items-center  h-full lg:h-screen ">
+        <div className="auto-flex-dir  gap-10 lg:gap-4 justify-between w-full items-start relative">
+          <div className="flex  !items-start flex-col gap-3">
             <ColText
+              link={"#services"}
               about={t("invest")}
               className=" relative  max-w-2xl"
-              buttonText="Investment Options"
+              buttonText={t("servicest")}
               paragraph={t("about")}
               title={t("company")}
             >
@@ -32,8 +34,10 @@ const HeroSection: React.FC = async () => {
                 <FcMoneyTransfer className=" z-20" />
               </div>
               <Line2 className=" absolute -right-10  -top-6" />
-              <Button size={"lg"} className=" bordermain !rounded-full" variant={"secondary"}>
-                Contact Us
+              <Button size={"lg"} className="flex   items-center gap-2 !rounded-full">
+                <Link href={`#contact`} className="flex items-center gap-2">
+                  {t("contactUs")}
+                </Link>
               </Button>
             </ColText>
           </div>
@@ -58,7 +62,7 @@ const HeroSection: React.FC = async () => {
                   <TypographyBlockquote className="text-gray-700  lg:text-base italic">
                     {t("Vision")}
                   </TypographyBlockquote>
-                  <p className="text-gray-900 font-bold mt-2">Our Vision</p>
+                  <p className="text-gray-900 font-bold mt-2">{t("Our Vision")}</p>
                 </div>,
                 <div className="p-4 relative rounded-md mt-6">
                   {" "}
@@ -71,7 +75,7 @@ const HeroSection: React.FC = async () => {
                   <TypographyBlockquote className="text-gray-700  lg:text-base italic">
                     {t("Vision")}
                   </TypographyBlockquote>
-                  <p className="text-gray-900 font-bold mt-2">Our Vision</p>
+                  <p className="text-gray-900 font-bold mt-2">{t("Our Mission")}</p>
                 </div>,
               ]}
             />

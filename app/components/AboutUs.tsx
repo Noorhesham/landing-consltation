@@ -20,12 +20,12 @@ const AboutUs = async () => {
               </MotionItem>
             ))}
           </GridContainer>{" "}
-          <ColText
+          <ColText link="#services"
             linePositions="left"
             about={t("Differentiation")}
             title={t("differentiation.title")}
             paragraph={t("differentiation.description")}
-            buttonText="Grow your wealth with us"
+            buttonText={t("Grow your wealth with us")}
           />
         </GridContainer>
       </MaxWidthWrapper>
