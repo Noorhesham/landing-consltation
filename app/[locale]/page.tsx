@@ -5,7 +5,6 @@ import Services from "../components/Services";
 import CaseStudies from "../components/CaseStudies";
 import DigitalAmbition from "../components/DigitalAmbition";
 import Testimonials from "../components/Testimonials";
-import BlogSection from "../components/Blog";
 import ContactSection from "../components/Contact";
 import Methodology from "../components/Methodology";
 import { FeaturesSectionDemo } from "../components/OutSourcing";

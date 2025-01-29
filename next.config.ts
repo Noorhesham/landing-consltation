@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
   typescript: { ignoreBuildErrors: true },
   images: { unoptimized: true },
-  output: "export",
+  // output: "export",
 };
 
 export default withNextIntl(nextConfig);
