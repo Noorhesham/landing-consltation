@@ -4,6 +4,7 @@ import TitleLine from "./TitleLine";
 import MotionContainer from "./MotionContainer";
 import MotionItem from "./MotionItem";
 import { useTranslations } from "next-intl";
+import { IoMdPersonAdd } from "react-icons/io";
 
 const CoreValues = () => {
   const t = useTranslations("coreValues");
@@ -29,7 +30,7 @@ const CoreValues = () => {
 
   return (
     <MaxWidthWrapper className="flex flex-col gap-14 py-10 items-center bg-white">
-      <TitleLine className="font-bold !text-4xl !text-center" title={t("title")} />
+      <TitleLine icon={<IoMdPersonAdd className=" text-blue-300"/>} className="font-bold !text-4xl !text-center" title={t("title")} />
       <MotionContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
         {values.map((value, index) => (
           <MotionItem

@@ -46,12 +46,15 @@ const NavBar = () => {
   let links = [
     {
       text: "ABOUT US",
-      href: "#",
+      href: "#about",
     },
     {
       text: "Contact",
-      href: "#",
+      href: "#contact",
     },
+    {
+      text: "Our Services",
+      href: "#services",}
   ];
   const locale = useLocale();
   return (

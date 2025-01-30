@@ -5,6 +5,7 @@ import Image from "next/image";
 import MotionItem from "./MotionItem";
 import ColText from "./ColText";
 import { getTranslations } from "next-intl/server";
+import { TbBusinessplan } from "react-icons/tb";
 
 const AboutUs = async () => {
   const t = await getTranslations();
@@ -20,7 +21,9 @@ const AboutUs = async () => {
               </MotionItem>
             ))}
           </GridContainer>{" "}
-          <ColText link="#services"
+          <ColText
+            link="#services"
+            icon={<TbBusinessplan  className=" text-yellow-400"/>}
             linePositions="left"
             about={t("Differentiation")}
             title={t("differentiation.title")}

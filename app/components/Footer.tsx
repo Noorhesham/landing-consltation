@@ -13,27 +13,15 @@ export default async function Footer() {
         <div className="text-center flex items-center justify-between  mb-12">
           <TitleLine
             line={false}
-            className=" text-5xl text-left"
+            className=" !w-full text-3xl lg:text-5xl text-left"
             title="Join Us today and let us help you to grow your business"
           />
-
-          {/* <div className="mt-4">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none"
-            />
-            <button className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-r-md hover:bg-blue-600">
-              Subscribe
-            </button>
-          </div> */}
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <Logo />
           <div>
-            <Logo />
-            <p className="mt-2 text-gray-600">{t("about")}</p>
-            <div className="flex gap-4 mt-4">
+            {/* <div className="flex gap-4 mt-4">
               <a href="#" className="text-blue-500 hover:text-blue-600">
                 <i className="fab fa-twitter"></i>
               </a>
@@ -43,11 +31,10 @@ export default async function Footer() {
               <a href="#" className="text-blue-500 hover:text-blue-600">
                 <i className="fab fa-facebook"></i>
               </a>
-            </div>
-            <p className="mt-4 text-gray-400">©2025 </p>
+            </div> */}
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="font-semibold text-gray-800">Learn</h4>
             <ul className="mt-4 text-gray-600 space-y-2">
               <li>
@@ -61,8 +48,8 @@ export default async function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-
+          </div> */}
+<div></div>
           {/* <div>
             <h4 className="font-semibold text-gray-800">Our Company</h4>
             <ul className="mt-4 text-gray-600 space-y-2">

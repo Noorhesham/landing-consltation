@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "./Overlapslider";
 import Image from "next/image";
 import { TypographyH2, TypographyH4, TypographyP } from "./TypoGraphy";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CalendarSearchIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 const CaseStudies = async () => {
@@ -10,7 +10,7 @@ const CaseStudies = async () => {
 
   return (
     <>
-      <Slider
+      <Slider icon={<CalendarSearchIcon className=" text-orange-300"/>}
         spaceBetween={20}
         title={t("caseStudies.title")}
         flag={t("caseStudies.flag")}

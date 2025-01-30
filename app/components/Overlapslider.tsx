@@ -29,7 +29,9 @@ export const Slider = ({
   items,
   title,
   flag,
-  btn,maxwidth=true
+  btn,
+  maxwidth = true,
+  icon,
 }: {
   title: string;
   flag?: string;
@@ -39,18 +41,20 @@ export const Slider = ({
   autoplay?: number;
   loop?: boolean;
   items: ReactNode[];
-  btn?: boolean;maxwidth?:boolean
+  btn?: boolean;
+  maxwidth?: boolean;
+  icon?: ReactNode;
 }) => {
   const [swiper, setSwiper] = useState<null | SwiperType>(null);
 
   return (
     <section id="projects">
-      <Container maxwidth={maxwidth} >
+      <Container maxwidth={maxwidth}>
         <div className="flex  relative items-center flex-col gap-4">
           {title && (
             <MaxWidthWrapper noPadding className="flex items-center flex-col gap-4 mx-auto">
               {flag && <Flag className="!w-fit !mx-auto" text={flag} />}
-              {title && <TitleLine className="text-center" title={title} />}
+              {title && <TitleLine icon={icon} className="text-center" title={title} />}
             </MaxWidthWrapper>
           )}
 

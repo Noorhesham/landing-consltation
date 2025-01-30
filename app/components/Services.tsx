@@ -13,6 +13,7 @@ import ModalCustom from "./ModalCustom";
 import ContactSection from "./Contact";
 import { Button } from "@/components/ui/button";
 import ContactForm from "./ContactForm";
+import { FaServicestack } from "react-icons/fa";
 
 const Services = () => {
   const t = useTranslations("services");
@@ -77,54 +78,60 @@ const Services = () => {
   return (
     <section className="flex items-center flex-col">
       <Slider
+        icon={<FaServicestack  className=" text-blue-500"/>}
         spaceBetween={10}
         slidesPerView={3}
         title={t("title")}
         flag={t("title")}
         items={tabs.map(({ tab: { img, title, para } }, i) => (
-          <div
-            key={i}
-            onClick={() => setCurrentTab(i)}
-            className={`flex rounded-2xl ${
-              i === currentTab ? "bg-primary" : "bg-white"
-            } flex-col cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
-          >
-            <TypographyH2
-              className={`${
-                i === currentTab && "!text-white"
-              } text-center border-none lg:text-lg text-sm mt-2 text-muted-foreground`}
-            >
-              {title}
-            </TypographyH2>
-          </div>
+          <ModalCustom
+            title={title}
+            btn={
+              <div
+                key={i}
+                onClick={() => setCurrentTab(i)}
+                className={`flex rounded-2xl ${
+                  i === currentTab ? "bg-primary" : "bg-white"
+                } flex-col cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
+              >
+                <TypographyH2
+                  className={`${
+                    i === currentTab && "!text-white"
+                  } text-center border-none lg:text-lg text-sm mt-2 text-muted-foreground`}
+                >
+                  {title}
+                </TypographyH2>
+              </div>
+            }
+            content={
+              <MotionItem
+                exit={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="bg-primary-foreground/50 w-full"
+                key={currentTab}
+              >
+                <MaxWidthWrapper noPadding>
+                  <div className="flex flex-col gap-5">
+                    <div className="duration-300 overflow-hidden rounded-xl w-full h-96 relative">
+                      <Image src={tabs[currentTab].content.img} alt="hero" fill className="duration-300 object-cover" />
+                    </div>
+                    <div className="flex flex-col  rtl:items-start">
+                      <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
+                      <TypographyP>{tabs[currentTab].content.para}</TypographyP>
+                      <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
+                      <ModalCustom
+                        title={tabs[currentTab].content.title}
+                        content={<ContactForm services={tabs[currentTab].content.title} />}
+                        btn={<Button className=" my-4">{t("Apply")}</Button>}
+                      />
+                    </div>
+                  </div>
+                </MaxWidthWrapper>
+              </MotionItem>
+            }
+          />
         ))}
       />
-      <AnimatePresence>
-        <MotionItem
-          exit={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="bg-primary-foreground/50 w-full"
-          key={currentTab}
-        >
-          <MaxWidthWrapper noPadding>
-            <GridContainer cols={2}>
-              <div className="duration-300 overflow-hidden rounded-xl w-full h-96 relative">
-                <Image src={tabs[currentTab].content.img} alt="hero" fill className="duration-300 object-cover" />
-              </div>
-              <div className="flex flex-col  rtl:items-start">
-                <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
-                <TypographyP>{tabs[currentTab].content.para}</TypographyP>
-                <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
-                <ModalCustom
-                  title={tabs[currentTab].content.title}
-                  content={<ContactForm services={tabs[currentTab].content.title} />}
-                  btn={<Button className=" my-4">{t("Apply")}</Button>}
-                />
-              </div>
-            </GridContainer>
-          </MaxWidthWrapper>
-        </MotionItem>
-      </AnimatePresence>
     </section>
   );
 };

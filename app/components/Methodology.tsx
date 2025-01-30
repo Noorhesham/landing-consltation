@@ -9,6 +9,8 @@ import StaggerList from "./StaggerList";
 import { AnimatePresence } from "framer-motion";
 import MotionItem from "./MotionItem";
 import { useTranslations } from "next-intl";
+import ModalCustom from "./ModalCustom";
+import { FaDigitalOcean } from "react-icons/fa6";
 
 const Methodology = () => {
   const t = useTranslations("methodology");
@@ -107,42 +109,54 @@ const Methodology = () => {
         title={t("title")}
         flag={t("Methodology")}
         items={tabs.map(({ tab: { img, title, para } }, i) => (
-          <div
-            key={i}
-            onClick={() => setCurrentTab(i)}
-            className={`flex rounded-2xl ${
-              i === currentTab ? "bg-primary" : "bg-white"
-            } flex-col bg-gray-100 cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
-          >
-            <div className="w-full block h-20 relative">
-              <Image src={img} alt="" fill className="object-contain" />
-            </div>
-            <TypographyH2
-              className={`${
-                i === currentTab && "!text-white"
-              } text-center border-none lg:text-lg text-sm mt-2 text-muted-foreground`}
-            >
-              {title}
-            </TypographyH2>
-          </div>
+          <ModalCustom
+            title=" "
+            btn={
+              <div
+                key={i}
+                onClick={() => setCurrentTab(i)}
+                className={`flex rounded-2xl ${
+                  i === currentTab ? "bg-primary" : "bg-white"
+                } flex-col bg-gray-100 cursor-pointer hover:opacity-80 duration-300 items-center py-5 px-10`}
+              >
+                <div className="w-full block h-20 relative">
+                  <Image src={img} alt="" fill className="object-contain" />
+                </div>
+                <TypographyH2
+                  className={`${
+                    i === currentTab && "!text-white"
+                  } text-center border-none lg:text-lg text-sm mt-2 text-muted-foreground`}
+                >
+                  {title}
+                </TypographyH2>
+              </div>
+            }
+            content={
+              <AnimatePresence>
+                <MotionItem className="bg-primary-foreground/50 w-full" key={currentTab}>
+                  <MaxWidthWrapper>
+                    <div className="flex flex-col gap-4">
+                      <div className="duration-300 w-full h-96 relative">
+                        <Image
+                          src={tabs[currentTab].content.img}
+                          alt="hero"
+                          fill
+                          className="duration-300 object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col items-start">
+                        <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
+                        <TypographyP>{tabs[currentTab].content.para}</TypographyP>
+                        <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
+                      </div>
+                    </div>
+                  </MaxWidthWrapper>
+                </MotionItem>
+              </AnimatePresence>
+            }
+          />
         ))}
       />
-      <AnimatePresence>
-        <MotionItem className="bg-primary-foreground/50 w-full" key={currentTab}>
-          <MaxWidthWrapper>
-            <GridContainer cols={2}>
-              <div className="duration-300 w-full h-96 relative">
-                <Image src={tabs[currentTab].content.img} alt="hero" fill className="duration-300 object-cover" />
-              </div>
-              <div className="flex flex-col items-start">
-                <TypographyH2>{tabs[currentTab].content.title}</TypographyH2>
-                <TypographyP>{tabs[currentTab].content.para}</TypographyP>
-                <StaggerList list={tabs[currentTab].content.list} text={tabs[currentTab].content.listitle} />
-              </div>
-            </GridContainer>
-          </MaxWidthWrapper>
-        </MotionItem>
-      </AnimatePresence>
     </section>
   );
 };
