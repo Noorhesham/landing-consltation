@@ -54,7 +54,8 @@ const NavBar = () => {
     },
     {
       text: "Our Services",
-      href: "#services",}
+      href: "#services",
+    },
   ];
   const locale = useLocale();
   return (
@@ -100,10 +101,10 @@ const NavBar = () => {
               </div>
 
               <ul className=" hidden lg:flex z-30 relative items-center  gap-4 xl:gap-8 ">
-                <Language />
                 {links.map((link) => (
                   <NavLink key={link.text} href={link.href} text={link.text} />
                 ))}
+                <Language />
               </ul>
             </div>
           </div>
