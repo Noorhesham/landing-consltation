@@ -22,7 +22,7 @@ const HeroSection: React.FC = async () => {
           <div className="flex  !items-start flex-col gap-3">
             <ColText
               children1={
-                <div className=" w-full  mt-20 h-80 lg:h-96  relative rounded-2xl overflow-hidden">
+                <div className=" w-full  mt-20 h-72 lg:h-96  relative rounded-2xl overflow-hidden">
                   <Image fill className=" object-cover" src={"/network-connection-background_23-2148879892.png"} />
                 </div>
               }
