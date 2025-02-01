@@ -19,6 +19,7 @@ const ColText = ({
   iconBtn,
   link,
   icon,
+  children1,
 }: {
   paragraph: string;
   title: string;
@@ -31,12 +32,16 @@ const ColText = ({
   iconBtn?: ReactNode;
   link?: string;
   icon?: ReactNode;
+  children1: ReactNode;
 }) => {
   const locale = useLocale();
   return (
     <div className={`flex flex-col gap-4 ${className}`}>
+      {children1}
       {about && <Flag className="  w-fit z-20" text={about} />}
-      <TitleLine className=" lg:text-5xl" icon={icon} title={title} line={line} linePositions={linePositions} />
+      {title && (
+        <TitleLine className=" lg:text-5xl" icon={icon} title={title} line={line} linePositions={linePositions} />
+      )}
       <TypographyP className={` lg:text-base ${line && "mt-8"}`}>{paragraph}</TypographyP>
       <div
         className={` ${

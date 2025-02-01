@@ -21,18 +21,18 @@ const HeroSection: React.FC = async () => {
         <div className="auto-flex-dir  gap-10 lg:gap-4 justify-between w-full items-start relative">
           <div className="flex  !items-start flex-col gap-3">
             <ColText
+              children1={
+                <div className=" w-full  mt-20 h-96  relative rounded-2xl overflow-hidden">
+                  <Image fill className=" object-cover" src={"/network-connection-background_23-2148879892.png"} />
+                </div>
+              }
               link={"#services"}
               about={t("invest")}
               className=" relative  max-w-2xl"
               buttonText={t("servicest")}
               paragraph={t("about")}
-              title={t("company")}
             >
               {" "}
-              <div className=" absolute -right-32 text-5xl -top-14">
-                <span className=" absolute bg-primary/50 z-10 w-5 h-5 rounded-full"></span>
-                <FcMoneyTransfer className=" z-20" />
-              </div>
               <Line2 className=" absolute -right-10  -top-6" />
               <Button size={"lg"} className="flex   items-center gap-2 !rounded-full">
                 <Link href={`#contact`} className="flex items-center gap-2">
