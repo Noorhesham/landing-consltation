@@ -18,7 +18,7 @@ const HeroSection: React.FC = async () => {
     <section className="">
       {" "}
       <div className="">
-        <div className=" w-full   h-screen relative  overflow-hidden">
+        <div className=" w-full lg:mt-0 mt-24  h-64 lg:h-screen relative  overflow-hidden">
           <Image fill className=" object-contain" src={"/photo_2025-02-08_17-22-47.jpg"} />
         </div>
       </div>
