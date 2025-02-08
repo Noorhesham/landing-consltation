@@ -15,20 +15,20 @@ import Link from "next/link";
 const HeroSection: React.FC = async () => {
   const t = await getTranslations();
   return (
-    <section className=" pt-32 lg:pt-20">
+    <section className="">
       {" "}
-      <MaxWidthWrapper className="  flex justify-center items-center  h-full lg:h-screen ">
+      <div className="">
+        <div className=" w-full   h-screen relative  overflow-hidden">
+          <Image fill className=" object-contain" src={"/photo_2025-02-08_17-22-47.jpg"} />
+        </div>
+      </div>
+      <MaxWidthWrapper className="  flex justify-center items-center   h-full ">
         <div className="auto-flex-dir  gap-10 lg:gap-4 justify-between w-full items-start relative">
-          <div className="flex  !items-start flex-col gap-3">
+          <div className="flex lg:flex-row flex-col   w-full !items-start justify-between  gap-3">
             <ColText
-              children1={
-                <div className=" w-full  mt-20 h-72 lg:h-96  relative rounded-2xl overflow-hidden">
-                  <Image fill className=" object-cover" src={"/network-connection-background_23-2148879892.png"} />
-                </div>
-              }
               link={"#services"}
               about={t("invest")}
-              className=" relative  max-w-2xl"
+              className=" relative  max-w-xl "
               buttonText={t("servicest")}
               paragraph={t("about")}
             >
@@ -40,46 +40,43 @@ const HeroSection: React.FC = async () => {
                 </Link>
               </Button>
             </ColText>
+            <div className="relative overflow-hidden w-full max-w-md h-fit flex flex-col ">
+              <Slider
+                maxwidth={false}
+                btn={false}
+                slidesPerView={1}
+                items={[
+                  <div className="p-4 relative rounded-md mt-6">
+                    {" "}
+                    <Line3 className=" absolute -top-10 -left-20 w-10 " />
+                    <div className="flex items-center gap-2">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <FaStar key={i} className="text-yellow-500" />
+                      ))}
+                    </div>
+                    <TypographyBlockquote className="text-gray-700  lg:text-base italic">
+                      {t("Vision")}
+                    </TypographyBlockquote>
+                    <p className="text-gray-900 font-bold mt-2">{t("Our Vision")}</p>
+                  </div>,
+                  <div className="p-4 relative rounded-md mt-6">
+                    {" "}
+                    <Line3 className=" absolute -top-10 -left-20 w-10 " />
+                    <div className="flex items-center gap-2">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <FaStar key={i} className="text-yellow-500" />
+                      ))}
+                    </div>
+                    <TypographyBlockquote className="text-gray-700  lg:text-base italic">
+                      {t("Vision")}
+                    </TypographyBlockquote>
+                    <p className="text-gray-900 font-bold mt-2">{t("Our Mission")}</p>
+                  </div>,
+                ]}
+              />
+            </div>
           </div>
           {/* Right Content */}
-          <div className="relative overflow-hidden max-w-md flex flex-col self-end">
-            <div className=" w-full h-64 relative">
-              <Image src="/Consulting-services-526x589.png.webp" alt="hero" fill className=" object-contain" />
-            </div>
-            <Slider
-              maxwidth={false}
-              btn={false}
-              slidesPerView={1}
-              items={[
-                <div className="p-4 relative rounded-md mt-6">
-                  {" "}
-                  <Line3 className=" absolute -top-10 -left-20 w-10 " />
-                  <div className="flex items-center gap-2">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <FaStar key={i} className="text-yellow-500" />
-                    ))}
-                  </div>
-                  <TypographyBlockquote className="text-gray-700  lg:text-base italic">
-                    {t("Vision")}
-                  </TypographyBlockquote>
-                  <p className="text-gray-900 font-bold mt-2">{t("Our Vision")}</p>
-                </div>,
-                <div className="p-4 relative rounded-md mt-6">
-                  {" "}
-                  <Line3 className=" absolute -top-10 -left-20 w-10 " />
-                  <div className="flex items-center gap-2">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <FaStar key={i} className="text-yellow-500" />
-                    ))}
-                  </div>
-                  <TypographyBlockquote className="text-gray-700  lg:text-base italic">
-                    {t("Vision")}
-                  </TypographyBlockquote>
-                  <p className="text-gray-900 font-bold mt-2">{t("Our Mission")}</p>
-                </div>,
-              ]}
-            />
-          </div>
         </div>
       </MaxWidthWrapper>
     </section>

@@ -7,17 +7,7 @@ import Slider from "./Overlapslider";
 
 const OurCompany = async () => {
   // Array of logo images (example placeholder links)
-  const logos = [
-    "/logo1.svg",
-    "/logo2.svg",
-    "/logo3.svg",
-    "/logo5.svg",
-    "/logo6.svg",
-    "/logo7.svg",
-    "/logo8.svg",
-    "/logo9.svg",
-    "/logo10.svg",
-  ];
+  const logos = ["/logo2.svg", "/logo3.svg", "/logo5.svg", "/logo6.svg", "/logo7.svg", "/logo9.svg", "/logo10.svg"];
   const t = await getTranslations();
   return (
     <MaxWidthWrapper className=" w-full flex flex-col gap-4 items-center">
@@ -25,7 +15,7 @@ const OurCompany = async () => {
         slidesPerView={4}
         loop
         spaceBetween={20}
-        title={t("Our Partners")}
+        title={t("parteners")}
         height="h-80"
         items={logos.map((logo, index) => (
           <div key={index} className="  h-44 w-full relative items-center">

@@ -41,9 +41,9 @@ const Number = async () => {
         <GridContainer cols={3}>
           {" "}
           {[
-            { number: 12, title: t('"Years Of Experience"'), prefix: "+" },
-            { number: 641, title: t("Projects"), prefix: "+" },
-            { number: 600, title: t("Clients"), prefix: "+" },
+            { number: 8, title: t('Years Of Experience'), prefix: "+" },
+            { number: 100, title: t("Projects"), prefix: "+" },
+            { number: 70, title: t("Clients"), prefix: "+" },
           ].map((numb: any) => (
             <div className=" flex items-center flex-col gap-4 relative">
               <span className=" absolute lg:block hidden -top-5 text-main2 right-10">{numb.prefix}</span>

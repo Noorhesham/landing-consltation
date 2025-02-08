@@ -1,6 +1,8 @@
+"use client";
 import React, { ReactNode } from "react";
 import { TypographyH2 } from "./TypoGraphy";
 import Line from "./Line";
+import { useLocale } from "next-intl";
 
 const TitleLine = ({
   title,
@@ -15,10 +17,11 @@ const TitleLine = ({
   className?: string;
   icon?: ReactNode;
 }) => {
+  const locale = useLocale();
   return (
     <TypographyH2
-      className={` ${line && "border-none"} capitalize ${
-        className || ""
+      className={` ${line && "border-none"} w-fit capitalize ${className || ""} ${
+        locale === "ar" ? "text-right " : "text-left"
       } flex relative font-extrabold text-3xl lg:text-4xl max-w-2xl items-center gap-3 `}
     >
       <div className="flex flex-col">

@@ -19,7 +19,7 @@ const ColText = ({
   iconBtn,
   link,
   icon,
-  children1,
+  children1,titleClassName
 }: {
   paragraph: string;
   title: string;
@@ -32,7 +32,7 @@ const ColText = ({
   iconBtn?: ReactNode;
   link?: string;
   icon?: ReactNode;
-  children1: ReactNode;
+  children1: ReactNode;titleClassName?: string
 }) => {
   const locale = useLocale();
   return (
@@ -40,7 +40,7 @@ const ColText = ({
       {children1}
       {about && <Flag className="  w-fit z-20" text={about} />}
       {title && (
-        <TitleLine className=" lg:text-5xl" icon={icon} title={title} line={line} linePositions={linePositions} />
+        <TitleLine className={`${titleClassName} lg:text-5xl`} icon={icon} title={title} line={line} linePositions={linePositions} />
       )}
       <TypographyP className={` lg:text-base ${line && "mt-8"}`}>{paragraph}</TypographyP>
       <div

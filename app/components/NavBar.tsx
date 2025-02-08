@@ -61,14 +61,14 @@ const NavBar = () => {
   return (
     <header className=" w-full">
       <nav
-        className={` text-main font-semibold placeholder:text-white  ${
-          isScrollingDown && "bg-white/80"
-        } fixed inset-0  max-h-[5rem] lg:max-h-[7rem]  z-[99]   flex flex-col gap-2  py-4 transition-all duration-300 ${
+        className={` text-main font-semibold  placeholder:text-white  ${
+          isScrollingDown && "bg-white/80 "
+        } fixed inset-0 text-white  max-h-[5rem] lg:max-h-[7rem]  z-[99]   flex flex-col gap-2  py-4 transition-all duration-300 ${
           isScrollingDown
             ? "translate-y-[-110%]"
             : !isTopPage && !isScrollingDown
-            ? `  -translate-y-2 lg:-translate-y-5 `
-            : "translate-y-0"
+            ? `!text-black  -translate-y-2 lg:-translate-y-5 `
+            : "translate-y-0 !text-white"
         }`}
       >
         {" "}

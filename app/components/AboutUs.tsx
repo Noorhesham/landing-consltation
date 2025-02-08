@@ -21,7 +21,7 @@ const AboutUs = async () => {
               </MotionItem>
             ))}
           </GridContainer>{" "}
-          <ColText
+          <ColText titleClassName=" !ms-auto" className=" !self-start  !w-fit"
             link="#services"
             icon={<TbBusinessplan  className=" text-yellow-400"/>}
             linePositions="left"
